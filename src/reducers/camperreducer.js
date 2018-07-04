@@ -11,9 +11,11 @@ const camperInfoDefaultState = {
 export default (state = camperInfoDefaultState, action) => {
     switch(action.type) {
         case 'CREATE':
+            console.log(state);
+            console.log(action);
             return {
                 ...state,
-                action
+                camper: {...action}
             }
         default:
             return state;

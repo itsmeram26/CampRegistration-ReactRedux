@@ -1,4 +1,3 @@
-
 const camperInfo = (camperInfo) => {
     console.log(camperInfo);
     return {
@@ -6,4 +5,6 @@ const camperInfo = (camperInfo) => {
         camperInfo
     }
 }
+
+export default camperInfo;
 

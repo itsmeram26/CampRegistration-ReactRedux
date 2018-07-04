@@ -3,25 +3,17 @@ import React from 'react';
 export default class CamperForm extends React.Component {
     constructor(props){
         super(props);
+        console.log(props);
         this.state = {
-            cname:props.cname,
-            gender:props.gender,
-            address:props.address,
-            city:props.city,
-            state:props.state,
-            zipcode:props.zipcode,
-            error:''
-        }
-    }
-    /* 
             cname:(props.camper.cname || ''),
             gender:(props.camper.gender || ''),
             address:(props.camper.address || ''),
             city:(props.camper.city || ''),
             state:(props.camper.state || ''),
             zipcode:(props.camper.zipcode || ''),
-            error:''    
-    */
+            error:''  
+        }
+    }
     handleInputEvent = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -112,4 +104,8 @@ export default class CamperForm extends React.Component {
             </div>
         )        
     }
+}
+
+CamperForm.defaultProps = {
+    camper : ''
 }
