@@ -10,13 +10,13 @@ class CamperDashboard extends React.Component {
       super(props, context);
       this._columns = [
         {
-          key: 'cname',
-          name: 'Name',
+          key: 'cfname',
+          name: 'First Name',
           resizable: true
         },
         {
-          key: 'gender',
-          name: 'Gender',
+          key: 'clname',
+          name: 'Last Name',
           resizable: true
         },
         {

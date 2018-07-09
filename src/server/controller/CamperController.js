@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 
 const camperJSON = {
     'camper' : [{
-        'cname' :'AAA',
-        'gender':'Male',
+        'cfname' :'AAA',
+        'clname':'WER',
         'address':'111, ABC',
         'city': 'Bridgewater',
         'state':'VA',
@@ -17,8 +17,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'BBB',
-        'gender':'Female',
+        'cfname' :'BBB',
+        'clname':'WER',
         'address':'111, BBB',
         'city': 'New Port',
         'state':'VA',
@@ -26,8 +26,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'CCC',
-        'gender':'Male',
+        'cfname' :'CCC',
+        'clname':'BBB',
         'address':'111, CCC',
         'city': 'Huntersville',
         'state':'VA',
@@ -35,8 +35,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'DDD',
-        'gender':'Male',
+        'cfname' :'DDD',
+        'clname':'VVV',
         'address':'111, DDD',
         'city': 'Mclean',
         'state':'VA',
@@ -44,8 +44,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'EEE',
-        'gender':'Male',
+        'cfname' :'EEE',
+        'clname':'ZZZ',
         'address':'111, EEE',
         'city': 'Richmond',
         'state':'VA',
@@ -53,8 +53,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'FFF',
-        'gender':'Male',
+        'cfname' :'FFF',
+        'clname':'AAA',
         'address':'111, FFF',
         'city': 'Jersey City',
         'state':'VA',
@@ -62,8 +62,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'GGG',
-        'gender':'Male',
+        'cfname' :'GGG',
+        'clname':'QWE',
         'address':'111, GGG',
         'city': 'Jersey City',
         'state':'VA',
@@ -71,8 +71,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'HHH',
-        'gender':'Male',
+        'cfname' :'HHH',
+        'clname':'Test',
         'address':'111, HHH',
         'city': 'Charlotte',
         'state':'VA',
@@ -80,8 +80,8 @@ const camperJSON = {
         'email': 'example@example.com',
         'phone': '1234567890'
     },{
-        'cname' :'III',
-        'gender':'Male',
+        'cfname' :'III',
+        'clname':'RRR',
         'address':'111, III',
         'city': 'Charlotte',
         'state':'VA',
