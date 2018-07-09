@@ -6,17 +6,15 @@ const camperInfoDefaultState = {
 export default (state = camperInfoDefaultState, action) => {
     switch (action.type) {
         case 'CREATE':
-            console.log(state);
-            console.log(action);
             return {
                 ...state,
-                camper: { ...action
+                camper: {
+                    ...action,
+                    'message': 'Success',
+                    'error' : ''
                 }
             }
         case 'POPULATE':
-            console.log('Populate');
-            console.log(state);
-            console.log(action);
             return {
                 ...state,
                 campersList: action.campers

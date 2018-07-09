@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class CamperForm extends React.Component {
+class CamperForm extends React.Component {
     constructor(props){
         super(props);
         console.log(props);
@@ -13,7 +14,8 @@ export default class CamperForm extends React.Component {
             zipcode:(props.camper.zipcode || ''),
             email:(props.camper.email || ''),
             phone:(props.camper.phone || ''),
-            error:''  
+            error: '',
+            success: ''
         }
     }
     handleInputEvent = (event) => {
@@ -34,7 +36,6 @@ export default class CamperForm extends React.Component {
         return (
             <div>
             <div className="container">
-                {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <div className="form-row">
                         <div className="form-group col-md-6">
@@ -73,7 +74,17 @@ export default class CamperForm extends React.Component {
                             <label htmlFor="zipcode">Zip Code</label>
                             <input name="zipcode" type="text" value={this.state.zipcode} className="form-control" id="zipcode" onChange={this.handleInputEvent} />
                         </div>                            
-                    </div>                        
+                        </div>
+                        {this.props.camper.error &&
+                            <div className="alert alert-danger text-center" role="alert">
+                                <h4 className="alert-heading">{this.props.camper.error}</h4>
+                            </div>
+                        } 
+                        {this.props.camper.message &&
+                            <div className="alert alert-success text-center" role="alert">
+                                <h4 className="alert-heading">{this.props.camper.message}</h4>
+                            </div>
+                        }      
                     <button className="btn btn-primary btn-lg btn-block">Next</button>
                 </form>
                 </div>
@@ -85,3 +96,11 @@ export default class CamperForm extends React.Component {
 CamperForm.defaultProps = {
     camper : ''
 }
+
+const mapStateToProps = (state) => {
+    return {
+      camper : state.camper.camper
+    };
+  };
+  
+export default connect(mapStateToProps)(CamperForm);
