@@ -5,8 +5,8 @@ export default class CamperForm extends React.Component {
         super(props);
         console.log(props);
         this.state = {
-            cname:(props.camper.cname || ''),
-            gender:(props.camper.gender || ''),
+            cfname:(props.camper.cfname || ''),
+            clname:(props.camper.clname || ''),
             address:(props.camper.address || ''),
             city:(props.camper.city || ''),
             state:(props.camper.state || ''),
@@ -33,94 +33,48 @@ export default class CamperForm extends React.Component {
     render() {
         return (
             <div>
-            <div className="container-fluid">
+            <div className="container">
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
-                    <label>
-                        Camper's Name
-                        <input
-                        name="cname"
-                        value={this.state.cname}
-                        type="textbox"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>
-                    <label>
-                        Male
-                        <input
-                            name="gender"
-                            value="Male"
-                            type="radio"
-                            onChange={this.handleInputEvent}
-                            />
-                    </label>
-                    <label>
-                        Female
-                        <input
-                        name="gender"
-                        value="Female"
-                        type="radio"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>
-                    <label>
-                        Address
-                        <input
-                        name="address"
-                        value={this.state.address}
-                        type="text"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>
-                    <label>
-                        City
-                        <input
-                            name="city"
-                            value={this.state.city}
-                            type="text"
-                            onChange={this.handleInputEvent}
-                            />
-                    </label>
-                    <br />
-                    <label>
-                        State
-                        <input
-                            name="state"
-                            value={this.state.state}
-                            type="text"
-                            onChange={this.handleInputEvent}
-                            />
-                    </label>
-                    <label>
-                        ZipCode
-                        <input
-                        name="zipcode"
-                        value={this.state.zipcode}
-                        type="number"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>   
-                    <label>
-                        E-Mail
-                        <input
-                        name="email"
-                        value={this.state.email}
-                        type="email"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>   
-                    <label>
-                        Phone Number
-                        <input
-                        name="phone"
-                        value={this.state.phone}
-                        type="number"
-                        onChange={this.handleInputEvent}
-                        />
-                    </label>                                         
-                    <label>
-                        <button>Next</button>
-                     </label>     
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="cfname">First Name</label>
+                            <input name="cfname" type="text" value={this.state.cfname} className="form-control" id="cfname" onChange={this.handleInputEvent} />
+                        </div>     
+                        <div className="form-group col-md-6">
+                            <label htmlFor="clname">Last Name</label>
+                            <input name="clname" type="text" value={this.state.clname} className="form-control" id="clname" onChange={this.handleInputEvent} />
+                        </div>  
+                    </div>
+                    <div className="form-row">    
+                        <div className="form-group col-md-6">
+                            <label htmlFor="email">e-Mail</label>
+                            <input name="email" type="text" value={this.state.email} className="form-control" id="email" onChange={this.handleInputEvent} />
+                        </div>     
+                        <div className="form-group col-md-6">
+                            <label htmlFor="phone">Phone</label>
+                            <input name="phone" type="text" value={this.state.phone} className="form-control" id="phone" onChange={this.handleInputEvent} />
+                        </div>   
+                    </div>           
+                    <div className="form-group">
+                        <label htmlFor="inputAddress">Address</label>
+                        <input name="address" type="text" value={this.state.address} className="form-control" id="inputAddress" placeholder="1234 Main St" onChange={this.handleInputEvent} />
+                    </div>      
+                    <div className="form-row">    
+                        <div className="form-group col-md-4">
+                            <label htmlFor="city">City</label>
+                            <input name="city" type="text" value={this.state.city} className="form-control" id="city" onChange={this.handleInputEvent} />
+                        </div>     
+                        <div className="form-group col-md-4">
+                            <label htmlFor="state">State</label>
+                            <input name="state" type="text" value={this.state.state} className="form-control" id="state" onChange={this.handleInputEvent} />
+                        </div> 
+                        <div className="form-group col-md-4">
+                            <label htmlFor="zipcode">Zip Code</label>
+                            <input name="zipcode" type="text" value={this.state.zipcode} className="form-control" id="zipcode" onChange={this.handleInputEvent} />
+                        </div>                            
+                    </div>                        
+                    <button className="btn btn-primary btn-lg btn-block">Next</button>
                 </form>
                 </div>
             </div>
