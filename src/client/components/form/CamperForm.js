@@ -11,6 +11,8 @@ export default class CamperForm extends React.Component {
             city:(props.camper.city || ''),
             state:(props.camper.state || ''),
             zipcode:(props.camper.zipcode || ''),
+            email:(props.camper.email || ''),
+            phone:(props.camper.phone || ''),
             error:''  
         }
     }
@@ -31,6 +33,7 @@ export default class CamperForm extends React.Component {
     render() {
         return (
             <div>
+            <div className="container-fluid">
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <label>
@@ -96,11 +99,30 @@ export default class CamperForm extends React.Component {
                         type="number"
                         onChange={this.handleInputEvent}
                         />
-                    </label>     
+                    </label>   
                     <label>
-                        <button>Create</button>
+                        E-Mail
+                        <input
+                        name="email"
+                        value={this.state.email}
+                        type="email"
+                        onChange={this.handleInputEvent}
+                        />
+                    </label>   
+                    <label>
+                        Phone Number
+                        <input
+                        name="phone"
+                        value={this.state.phone}
+                        type="number"
+                        onChange={this.handleInputEvent}
+                        />
+                    </label>                                         
+                    <label>
+                        <button>Next</button>
                      </label>     
                 </form>
+                </div>
             </div>
         )        
     }

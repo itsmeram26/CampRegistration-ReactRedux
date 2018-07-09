@@ -5,6 +5,8 @@ const camperInfoDefaultState = {
     city:'',
     state:'',
     zipcode:'',
+    email:'',
+    phone:'',
     error:''
 }
 
@@ -16,7 +18,7 @@ export default (state = camperInfoDefaultState, action) => {
             return {
                 ...state,
                 camper: {...action}
-            }
+            }        
         default:
             return state;
     }

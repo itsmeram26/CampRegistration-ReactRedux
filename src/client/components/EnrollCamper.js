@@ -4,8 +4,8 @@ import CamperForm from './form/CamperForm';
 import camperAction from '../actions/camperaction'
 
 
-const CamperInformation = (props) => (
-    <div>
+const EnrollCamper = (props) => (
+    <div  id="enroll">
         <CamperForm 
             onSubmit={(camperInfo) => {
                 props.dispatch(camperAction(camperInfo));
@@ -14,4 +14,4 @@ const CamperInformation = (props) => (
     </div>
 );
 
-export default connect()(CamperInformation);
+export default connect()(EnrollCamper);
