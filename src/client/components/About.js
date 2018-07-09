@@ -4,7 +4,7 @@ const About = (props) => (
     <div className="container">
     <div className="jumbotron">
     <h1 className="display-4">A note on what I have done</h1>
-    <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p className="lead">In this application, am creating a camper information passing the data to Node JS server via XHR call. I have a page to retrieve all the newly created information from the sever(HARD CODED Values) and display on the grid. Thus making an end-end call.</p>
     
     <p>I have used the following to build the application</p>
     <ul>
