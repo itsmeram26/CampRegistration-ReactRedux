@@ -92,15 +92,12 @@ const camperJSON = {
 }
 
 const getCamper = (req, res) => {
-    console.log('GetCamper');
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.send(JSON.stringify(camperJSON));
 }
 
 const createCamper = (req, res) => {
-    console.log('createCamper');
-    console.log(req.body);
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.send(JSON.stringify({"status":200,"message":"Success"}));   

@@ -1,24 +1,26 @@
 const camperInfoDefaultState = {
-    cname:'',
-    gender:'',
-    address:'',
-    city:'',
-    state:'',
-    zipcode:'',
-    email:'',
-    phone:'',
-    error:''
+    camper: {},
+    camperList: []
 }
 
 export default (state = camperInfoDefaultState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'CREATE':
             console.log(state);
             console.log(action);
             return {
                 ...state,
-                camper: {...action}
-            }        
+                camper: { ...action
+                }
+            }
+        case 'POPULATE':
+            console.log('Populate');
+            console.log(state);
+            console.log(action);
+            return {
+                ...state,
+                campersList: action.campers
+            }
         default:
             return state;
     }

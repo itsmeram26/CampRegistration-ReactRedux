@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ReactDataGrid from "react-data-grid";
 import ReactDOM from 'react-dom';
 import xhr from '../utils/xhr';
+import { populate } from '../actions/camperaction'
 
 class CamperDashboard extends React.Component {
     constructor(props, context) {
@@ -49,22 +50,14 @@ class CamperDashboard extends React.Component {
           resizable: true
         }
       ];
-      this.state = {
-        campers : props.camper || []
-      }
     }
 
     componentDidMount(){
-        xhr.get('campers').then((response)=> { 
-            console.log('RESP :: ',response.data);
-            this.setState(() => ({
-              campers : response.data.camper 
-            }));
-        });
+      this.props.dispatch(populate());
     }
 
-    rowGetter = (i) => {
-      return this.state.campers[i];
+  rowGetter = (i) => {
+      return this.props.campersList[i];
     };
   
     render() {
@@ -73,7 +66,7 @@ class CamperDashboard extends React.Component {
           <ReactDataGrid
           columns={this._columns}
           rowGetter={this.rowGetter}
-          rowsCount={this.state.campers.length}
+          rowsCount={this.props.campersList.length}
           minHeight={500}
           minColumnWidth={120} 
         />
@@ -82,4 +75,14 @@ class CamperDashboard extends React.Component {
     }
 }
 
-export default CamperDashboard;
+CamperDashboard.defaultProps = {
+  campersList : []
+}
+
+const mapStateToProps = (state) => {
+  return {
+    campersList : state.camper.campersList
+  };
+};
+
+export default connect(mapStateToProps)(CamperDashboard);

@@ -1,13 +1,6 @@
 import xhr from '../utils/xhr'
 
-
-/* JSON.stringify({
-        method: 'POST',
-        data : { 'camper' : camperInfo},
-        headers: {
-         'Content-Type': 'application/json'
-       }})*/
-const camperInfo = (camperInfo) => {
+const camperInfoAction = (camperInfo) => {
     console.log(camperInfo);
     return (dispatch)=> {
        xhr.post('camper',JSON.stringify({ 'camper' : camperInfo})).
@@ -24,16 +17,23 @@ const camperInfo = (camperInfo) => {
         });
     }
 }
-export default populateCampers;
 
-function populateCampers() {
+export default camperInfoAction;
+
+export const populate = function() {
     return (dispatch)=> {
         xhr.get('campers').then((response)=> { 
             let campers = response.data.camper;
-            return {
+            console.log(`CamperInfoAction ${campers}`)
+            dispatch({
                 type: 'POPULATE',
                 campers
-            }
+            });
         });
     }    
 }
+
+
+
+//export default { camperInfoAction, populate }
+
