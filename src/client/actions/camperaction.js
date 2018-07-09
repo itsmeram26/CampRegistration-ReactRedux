@@ -1,16 +1,14 @@
 import xhr from '../utils/xhr'
 
 const camperInfoAction = (camperInfo) => {
-    console.log(camperInfo);
     return (dispatch)=> {
        xhr.post('camper',JSON.stringify({ 'camper' : camperInfo})).
        then(
             (response)=>{
-                console.log('RESP :: ',response.data);
-                return {
+                dispatch({
                     type: 'CREATE',
                     camperInfo
-                }
+                });
             } 
         ).catch((error)=>{
             console.log('Error');
