@@ -3,25 +3,19 @@ import React from 'react';
 export default class CamperForm extends React.Component {
     constructor(props){
         super(props);
+        console.log(props);
         this.state = {
-            cname:props.cname,
-            gender:props.gender,
-            address:props.address,
-            city:props.city,
-            state:props.state,
-            zipcode:props.zipcode,
-            error:''
-        }
-    }
-    /* 
             cname:(props.camper.cname || ''),
             gender:(props.camper.gender || ''),
             address:(props.camper.address || ''),
             city:(props.camper.city || ''),
             state:(props.camper.state || ''),
             zipcode:(props.camper.zipcode || ''),
-            error:''    
-    */
+            email:(props.camper.email || ''),
+            phone:(props.camper.phone || ''),
+            error:''  
+        }
+    }
     handleInputEvent = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -39,6 +33,7 @@ export default class CamperForm extends React.Component {
     render() {
         return (
             <div>
+            <div className="container-fluid">
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <label>
@@ -104,12 +99,35 @@ export default class CamperForm extends React.Component {
                         type="number"
                         onChange={this.handleInputEvent}
                         />
-                    </label>     
+                    </label>   
                     <label>
-                        <button>Create</button>
+                        E-Mail
+                        <input
+                        name="email"
+                        value={this.state.email}
+                        type="email"
+                        onChange={this.handleInputEvent}
+                        />
+                    </label>   
+                    <label>
+                        Phone Number
+                        <input
+                        name="phone"
+                        value={this.state.phone}
+                        type="number"
+                        onChange={this.handleInputEvent}
+                        />
+                    </label>                                         
+                    <label>
+                        <button>Next</button>
                      </label>     
                 </form>
+                </div>
             </div>
         )        
     }
+}
+
+CamperForm.defaultProps = {
+    camper : ''
 }
